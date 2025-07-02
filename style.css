@@ -1,33 +1,66 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Neon Pulse Gaming</title>
-  <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS -->
-</head>
-<body>
-  <header>
-    <h1>NEON PULSE</h1>
-    <nav>
-      <a href="#">Home</a>
-      <a href="#">Games</a>
-      <a href="#">Gear</a>
-      <a href="#">Support</a>
-    </nav>
-  </header>
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #0d0d0d;
+  color: #e0ffe0;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  transition: all 0.3s ease-in-out;
+}
 
-  <section>
-    <h2>Featured Game</h2>
-    <p>Dominate the arena with ultra-responsive performance and visuals that slice through the dark.</p>
-  </section>
+header {
+  background-color: #101010;
+  text-align: center;
+  padding: 2.5rem 1rem;
+  box-shadow: 0 0 20px #00ff00;
+}
 
-  <section>
-    <h2>Upcoming Tournaments</h2>
-    <p>Join the fray—registration now open for our July Showdown.</p>
-  </section>
+header h1 {
+  color: #00ff00;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 0 8px #00ff00;
+}
 
-  <footer>
-    &copy; 2025 Neon Pulse Gaming. All rights reserved.
-  </footer>
-</body>
-</html>
+nav a {
+  margin: 0 1.2rem;
+  color: #66ff66;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.2s ease;
+}
+
+nav a:hover {
+  color: #00ff00;
+  text-shadow: 0 0 6px #00ff00;
+}
+
+section {
+  padding: 2rem;
+  border-bottom: 1px solid #222;
+  background-color: #0f0f0f;
+}
+
+section h2 {
+  color: #33ff33;
+  text-shadow: 0 0 5px #00ff00;
+}
+
+a {
+  color: #00ff88;
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: #00ff00;
+  text-shadow: 0 0 5px #00ff00;
+}
+
+footer {
+  background-color: #080808;
+  text-align: center;
+  padding: 1.2rem;
+  font-size: 0.9em;
+  color: #66ff66;
+  box-shadow: 0 0 10px #00ff00 inset;
+}

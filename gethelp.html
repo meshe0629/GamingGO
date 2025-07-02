@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>GamerGO - Get Help</title>
+<style>
+  body, html {
+    margin: 0; padding: 0; height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #000;
+    color: #0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .container {
+    background: rgba(0,0,0,0.8);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 20px #00ff00;
+    max-width: 400px;
+    width: 90%;
+  }
+  h1 {
+    text-align: center;
+    text-shadow: 0 0 10px #00ff00;
+  }
+  label, select, button {
+    display: block;
+    width: 100%;
+    margin-top: 1rem;
+  }
+  select {
+    background: #111;
+    color: #0f0;
+    border: 1px solid #0f0;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border-radius: 6px;
+  }
+  button {
+    margin-top: 2rem;
+    padding: 0.7rem;
+    background: #0f0;
+    border: none;
+    color: #000;
+    font-weight: bold;
+    font-size: 1.2rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  button:hover {
+    background: #0c0;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Select Your Game</h1>
+  <form id="gameForm">
+    <label for="gameSelect">Choose a game you need help with:</label>
+    <select id="gameSelect" required>
+      <option value="">-- Select a Game --</option>
+      <option value="Valorant">Valorant</option>
+      <option value="League of Legends">League of Legends</option>
+      <option value="Fortnite">Fortnite</option>
+      <option value="Minecraft">Minecraft</option>
+      <option value="Call of Duty">Call of Duty</option>
+      <option value="Apex Legends">Apex Legends</option>
+      <option value="Overwatch">Overwatch</option>
+      <option value="Rocket League">Rocket League</option>
+      <option value="Among Us">Among Us</option>
+      <option value="Genshin Impact">Genshin Impact</option>
+      <!-- Add more games here -->
+    </select>
+    <button type="submit">Submit</button>
+  </form>
+</div>
+
+<script>
+  document.getElementById('gameForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const game = document.getElementById('gameSelect').value;
+    if(game) {
+      // For now, just alert the choice
+      alert('You selected: ' + game + '\nThis will redirect to the help form soon.');
+      
+      // Example: redirect to a game-specific form or page
+      // window.location.href = 'https://forms.gle/your-form-link-for-' + encodeURIComponent(game);
+    } else {
+      alert('Please select a game first!');
+    }
+  });
+</script>
+
+</body>
+</html>

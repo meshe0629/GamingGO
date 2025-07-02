@@ -1,188 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Gamer Boost</title>
-  <style>
-    /* Base styles */
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      padding: 0;
-      color: #e0ffe0;
-      background-color: #0d0d0d;
-      overflow: hidden;
-      position: relative;
-      line-height: 1.6;
-    }
+<meta charset="UTF-8" />
+<title>Neon Water Ripple Background</title>
+<style>
+  /* Basic reset and font */
+  body, html {
+    margin: 0; padding: 0; height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #0f0;
+    overflow: hidden;
+    background: #000;
+  }
+  
+  /* Full screen video background */
+  #video-bg {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    object-fit: cover;
+    z-index: -2;
+    filter: brightness(0.3) contrast(1.5) saturate(2) hue-rotate(90deg);
+  }
 
-    /* Background Water Image */
-    body::before {
-      content: '';
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: url('https://images.unsplash.com/photo-1610878180933-2f91c85c43cf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
-      background-size: cover;
-      opacity: 0.07;
-      z-index: -2;
-      filter: brightness(0.5) contrast(1.2);
-    }
+  /* Neon green overlay */
+  #overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background: rgba(0,255,0,0.15);
+    mix-blend-mode: screen;
+    z-index: -1;
+  }
 
-    header {
-      background-color: #101010;
-      text-align: center;
-      padding: 2.5rem 1rem;
-      box-shadow: 0 0 20px #00ff00;
-      position: relative;
-      z-index: 1;
-    }
+  header, section, footer {
+    position: relative;
+    padding: 2rem;
+    background-color: rgba(0,0,0,0.6);
+    box-shadow: 0 0 15px #00ff00;
+    margin: 1rem auto;
+    max-width: 700px;
+    border-radius: 8px;
+  }
 
-    header h1 {
-      color: #00ff00;
-      margin-bottom: 0.5rem;
-      text-shadow: 0 0 8px #00ff00;
-    }
-
-    nav a {
-      margin: 0 1rem;
-      color: #66ff66;
-      text-decoration: none;
-      font-weight: bold;
-      transition: color 0.2s ease;
-    }
-
-    nav a:hover {
-      color: #00ff00;
-      text-shadow: 0 0 6px #00ff00;
-    }
-
-    section {
-      padding: 2rem;
-      border-bottom: 1px solid #222;
-      background-color: rgba(15, 15, 15, 0.85);
-      position: relative;
-      z-index: 1;
-    }
-
-    section h2 {
-      color: #33ff33;
-      text-shadow: 0 0 5px #00ff00;
-    }
-
-    a {
-      color: #00ff88;
-      text-decoration: underline;
-      transition: color 0.2s ease;
-    }
-
-    a:hover {
-      color: #00ff00;
-      text-shadow: 0 0 5px #00ff00;
-    }
-
-    footer {
-      background-color: #080808;
-      text-align: center;
-      padding: 1.2rem;
-      font-size: 0.9em;
-      color: #66ff66;
-      box-shadow: 0 0 10px #00ff00 inset;
-      position: relative;
-      z-index: 1;
-    }
-
-    /* Canvas styling for ripple effect */
-    canvas.ripple-canvas {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: -1;
-    }
-  </style>
+  header h1 {
+    text-align: center;
+    text-shadow: 0 0 10px #00ff00;
+    font-size: 2.5rem;
+  }
+</style>
 </head>
 <body>
-  <header>
-    <h1>🎮 GamerGO</h1>
-    <p>Get help. Give help. Rank up together.</p>
-    <nav>
-      <a href="#request">Need Help?</a>
-      <a href="#offer">Want to Help?</a>
-    </nav>
-  </header>
 
-  <section id="request">
-    <h2>🆘 Need Help?</h2>
-    <p>Fill this form if you're stuck or need a carry:</p>
-    <a href="https://forms.gle/your-form-link" target="_blank" rel="noopener">Submit Help Request</a>
-  </section>
+<video id="video-bg" autoplay loop muted playsinline>
+  <source src="https://cdn.videvo.net/videvo_files/video/free/2016-12/small_watermarked/160912_B_WaterRipple_01_preview.webm" type="video/webm">
+  <source src="https://cdn.videvo.net/videvo_files/video/free/2016-12/small_watermarked/160912_B_WaterRipple_01_preview.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
 
-  <section id="offer">
-    <h2>💪 Want to Help?</h2>
-    <p>Let us know what games you're good at and how you can help others:</p>
-    <a href="https://forms.gle/your-form-link" target="_blank" rel="noopener">Join as a Helper</a>
-  </section>
+<div id="overlay"></div>
 
-  <footer>
-    <p>© 2025 Gamer Boost | Join us on <a href="https://discord.gg/yourserver" target="_blank" rel="noopener">Discord</a></p>
-  </footer>
+<header>
+  <h1>🎮 GamerGO</h1>
+  <p>Get help. Give help. Rank up together.</p>
+</header>
 
-  <script>
-    // Create and add canvas for ripple effect
-    const canvas = document.createElement('canvas');
-    canvas.classList.add('ripple-canvas');
-    document.body.appendChild(canvas);
-    const ctx = canvas.getContext('2d');
+<section>
+  <h2>🆘 Need Help?</h2>
+  <p>Fill this form if you're stuck or need a carry:</p>
+  <a href="https://forms.gle/your-form-link" target="_blank" style="color:#0f0;">Submit Help Request</a>
+</section>
 
-    let width, height;
-    let ripples = [];
+<section>
+  <h2>💪 Want to Help?</h2>
+  <p>Let us know what games you're good at and how you can help others:</p>
+  <a href="https://forms.gle/your-form-link" target="_blank" style="color:#0f0;">Join as a Helper</a>
+</section>
 
-    function resize() {
-      width = window.innerWidth;
-      height = window.innerHeight;
-      canvas.width = width;
-      canvas.height = height;
-    }
+<footer>
+  <p>© 2025 Gamer Boost | Join us on <a href="https://discord.gg/yourserver" target="_blank" style="color:#0f0;">Discord</a></p>
+</footer>
 
-    window.addEventListener('resize', resize);
-    resize();
-
-    function addRipple(x, y) {
-      ripples.push({ x, y, radius: 0, maxRadius: 150, alpha: 0.5 });
-    }
-
-    function draw() {
-      ctx.clearRect(0, 0, width, height);
-
-      ripples.forEach((ripple, i) => {
-        ripple.radius += 2;
-        ripple.alpha -= 0.01;
-        if (ripple.alpha <= 0) {
-          ripples.splice(i, 1);
-          return;
-        }
-
-        ctx.beginPath();
-        ctx.arc(ripple.x, ripple.y, ripple.radius, 0, Math.PI * 2);
-        ctx.strokeStyle = `rgba(0, 255, 0, ${ripple.alpha})`;
-        ctx.lineWidth = 2;
-        ctx.shadowColor = 'rgba(0,255,0,0.7)';
-        ctx.shadowBlur = 10;
-        ctx.stroke();
-      });
-
-      requestAnimationFrame(draw);
-    }
-
-    draw();
-
-    // Add random ripples every 700ms
-    setInterval(() => {
-      addRipple(Math.random() * width, Math.random() * height);
-    }, 700);
-  </script>
 </body>
 </html>

@@ -1,44 +1,33 @@
-body {
-  font-family: Arial, sans-serif;
-  background-color: #1a1a1a;
-  color: #f5f5f5;
-  margin: 0;
-  padding: 0;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Neon Pulse Gaming</title>
+  <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS -->
+</head>
+<body>
+  <header>
+    <h1>NEON PULSE</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Games</a>
+      <a href="#">Gear</a>
+      <a href="#">Support</a>
+    </nav>
+  </header>
 
-header {
-  background-color: #222;
-  text-align: center;
-  padding: 2rem 1rem;
-}
+  <section>
+    <h2>Featured Game</h2>
+    <p>Dominate the arena with ultra-responsive performance and visuals that slice through the dark.</p>
+  </section>
 
-header h1 {
-  color: #00ffcc;
-  margin-bottom: 0.5rem;
-}
+  <section>
+    <h2>Upcoming Tournaments</h2>
+    <p>Join the fray—registration now open for our July Showdown.</p>
+  </section>
 
-nav a {
-  margin: 0 1rem;
-  color: #00ffff;
-  text-decoration: none;
-}
-
-section {
-  padding: 2rem;
-  border-bottom: 1px solid #333;
-}
-
-section h2 {
-  color: #00ccff;
-}
-
-a {
-  color: #00ffcc;
-}
-
-footer {
-  background-color: #111;
-  text-align: center;
-  padding: 1rem;
-  font-size: 0.9em;
-}
+  <footer>
+    &copy; 2025 Neon Pulse Gaming. All rights reserved.
+  </footer>
+</body>
+</html>
